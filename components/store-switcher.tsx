@@ -19,6 +19,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import { useState } from "react";
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<
   typeof PopoverTrigger
@@ -44,7 +45,7 @@ export default function StoreSwitcher({
     (item) => item.value === params.storeId
   );
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const onStoreSelect = (store: { value: string; label: string }) => {
     setOpen(false);

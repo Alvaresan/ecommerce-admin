@@ -1,14 +1,7 @@
-import prismadb from "@/lib/prismadb";
-import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs";
+import prismadb from "@/lib/prismadb";
 
-/**
- * Sets up the layout for the given React component.
- *
- * @param {Object} props - The props for the component.
- * @param {React.ReactNode} props.children - The children of the component.
- * @return {Promise<void>} The result of the setup.
- */
 export default async function SetupLayout({
   children,
 }: {
@@ -29,5 +22,6 @@ export default async function SetupLayout({
   if (store) {
     redirect(`/${store.id}`);
   }
+
   return <>{children}</>;
 }
